@@ -12,21 +12,26 @@ html {
 body {
 	font-family: 'Roboto', sans-serif;
 
-	max-width: 420px;
-	width: 100%;
+	// max-width: 420px;
+	// width: 100%;
 	margin: auto;
-	height: 100%;
+	// height: 100%;
 	border-radius: 20px;
 
 	background-color: s.color('background');
 
 	display: flex;
+
+	min-height: 812px;
+	max-width: 375px;
+
+	position: relative;
 }
 
 .page {
 	display: grid;
 	grid-template-rows: auto 1fr;
-	gap: s.space(8);
+	gap: s.space(12);
 	padding: s.space(4) s.space(6);
 	width: 100%;
 	height: 100%;
@@ -49,4 +54,16 @@ body {
 		font-size: 24px;
 		color: s.color(dark);
 	}
+}
+
+.page__line {
+   border-bottom: 5px solid s.color('dark');
+   border-radius: 100px;
+   max-width: 134px;
+
+   position: absolute;
+   left: 119px;
+   bottom: 10px;
+   width: 135px;
+   height: 5px;
 }

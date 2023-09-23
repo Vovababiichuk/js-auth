@@ -3,10 +3,8 @@
 body {
 	background-color: s.color('main');
 	justify-content: center;
-}
-
-.heading {
 	min-height: 812px;
+	max-width: 375px;
 }
 
 .heading__title {
