@@ -3,8 +3,11 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<main>
-	{{>heading title="Index" info=data.test}}
+<main class="main">
+    <div class="heading">
+        <h1 class="heading__title">JS-PRACTICE</h1>
+        <button class="heading__button" onclick="customNavigation.goTo('/signup')">Signup</button>
+    </div>
 </main>
 
 {{!

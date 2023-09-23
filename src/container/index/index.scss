@@ -1,7 +1,26 @@
 @use '../../style' as s;
 
-main {
-	background: s.color(dark);
-	color: s.color(light);
-	padding: s.space(4);
-} 
+body {
+	background-color: s.color('main');
+	justify-content: center;
+}
+
+.heading {
+	min-height: 812px;
+}
+
+.heading__title {
+	font-size: 36px;
+	text-align: center;
+	padding-top: 100px;
+	color: #fff;
+}
+
+.heading__button {
+	background-color: #fff;
+	font-size: 26px;
+	padding: 10px 120px;
+	border-radius: 20px;
+	@include s.click;
+	transform: translate(0, 380px);
+}

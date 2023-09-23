@@ -1,0 +1,6 @@
+@use '../../style' as s;
+
+.header__back-button {
+	@include s.click;
+	max-width: fit-content;
+}
