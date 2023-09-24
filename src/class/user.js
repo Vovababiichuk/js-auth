@@ -10,7 +10,7 @@ class User {
   static #list = []
 
   constructor({ email, password, role }) {
-    this.email = email
+    this.email = String(email).toLowerCase()
     this.password = password
     // але ось так записувати роль НЕБЕЗПЕЧНО, тому що в роль так може прийти будь що. Нам потрібна перевірка. Зробимо - convertRole...
     this.role = User.#convertRole(role)
@@ -20,12 +20,12 @@ class User {
     //конвертуємо роль в число
     role = Number(role)
 
-      // перевіряємо чи є в нас число, якщо числа немає то за замовчуванням ставим USER роль
+    // перевіряємо чи є в нас число, якщо числа немає то за замовчуванням ставим USER роль
     if (isNaN(role)) {
       role = this.USER_ROLE.USER
     }
 
-      // далі через Object.values отримуємо список наших значень і дивимося чи є наша конкретна роль в нашому списку, якщо є то ми її записуємо якщо ні то ставим USER за замовчуванням
+    // далі через Object.values отримуємо список наших значень і дивимося чи є наша конкретна роль в нашому списку, якщо є то ми її записуємо якщо ні то ставим USER за замовчуванням
     role = Object.values(this.USER_ROLE).includes(role)
       ? role
       : this.USER_ROLE.USER
@@ -40,11 +40,15 @@ class User {
 
     this.#list.push(user)
 
-    console.log(this.#list);
+    console.log(this.#list)
   }
 
+  // ф-я яка знаходить користувача за email
   static getByEmail(email) {
-    return this.#list.find((user) => user.email === email) || null
+    return (
+      this.#list.find((user) => user.email === String(email).toLowerCase()) ||
+      null
+    )
   }
 }
 

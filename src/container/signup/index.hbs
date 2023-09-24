@@ -19,6 +19,11 @@
             </div>
 
             <div class="form__item">
+                {{> field-select action="signupForm.change" label="Роль" name="role" placeholder="Виберіть роль" list=data.role}}
+                <span name="role" class="form__error">Помилка</span>
+            </div>
+
+            <div class="form__item">
                 {{> field-password action="signupForm.change" label="Пароль" type="password" name="password" placeholder="Введіть пароль"}}
                 <span name="password" class="form__error">Помилка</span>
             </div>
@@ -26,11 +31,6 @@
             <div class="form__item">
                 {{> field-password action="signupForm.change" label="Пароль ще раз" type="password" name="passwordAgain" placeholder="Введіть пароль"}}
                 <span name="passwordAgain" class="form__error">Помилка</span>
-            </div>
-
-            <div class="form__item">
-                {{> field-select action="signupForm.change" label="Роль" name="role" placeholder="Виберіть роль" list=data.role}}
-                <span name="role" class="form__error">Помилка</span>
             </div>
 
             <div class="form__item">
