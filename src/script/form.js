@@ -144,8 +144,10 @@ export class Form {
    if (text) el.innerText = text
   }
 
-  // ф-я яка переведе користувача на іншу сторінку через location
-  goTo = (url) => {
-    window.location.assign(url)
-  }
 }
+
+const goTo = (url) => {
+  window.location.assign(url)
+}
+
+window.goTo = goTo

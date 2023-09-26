@@ -1,0 +1,14 @@
+@use '../../style' as s;
+
+body {
+	background-color: s.color(white);
+	justify-content: center;
+	min-height: 812px;
+	max-width: 375px;
+}
+
+.heading__title {
+	font-size: 36px;
+	text-align: center;
+	padding-top: 100px;
+}

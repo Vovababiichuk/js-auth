@@ -1,5 +1,5 @@
 import { Form, REG_EXP_EMAIL, REG_EXP_PASSWORD } from '../../script/form'
-
+import { saveSession } from '../../script/session'
 class RecoveryConfirmForm extends Form {
    // перезаписуємо поля з батьківського класу Form в наш клас
 
@@ -69,6 +69,9 @@ class RecoveryConfirmForm extends Form {
 
             if (res.ok) {
                this.setAlert('success', data.message)
+               // так само як при реєстрації в нас буде генеруватися токен
+               saveSession(data.session)
+               location.assign('/')
             } else {
                this.setAlert('error', data.message)
             }
